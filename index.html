@@ -54,12 +54,14 @@ body {
     display: flex; /* Added flexbox to center the image */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
+    pointer-events: none; /* Prevent interaction */
 }
 
 .profile-picture {
-    width: 110%;
-    height: 110%;
+    width: 115%;
+    height: 115%;
     object-fit: cover;
+    pointer-events: none; /* Prevent interaction */
 }
 
 @keyframes fadeIn {
@@ -160,7 +162,24 @@ body {
         height: 70px;
     }
 }
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    width: 100%; /* Ensure footer takes full width */
+    display: flex;
+    justify-content: center;
+}
 </style>
+<script>
+document.addEventListener('contextmenu', function(e) {
+    if (e.target.closest('.profile-picture')) {
+        e.preventDefault();
+    }
+});
+</script>
     <div class="glass-container large">
         <div class="profile-picture-container">
             <img src="https://i.postimg.cc/fynPCzwW/img-1-1717419133765.webp" alt="Profile Picture" class="profile-picture">
@@ -177,8 +196,9 @@ body {
             <h4>Contact Me</h4>
             <p>If you have any questions or would like to get in touch, feel free to email me at for04866@gmail.com. Connect with me on Facebook for updates and engaging discussions!</p>
             <h4>Personal Information</h4>
-            <p>Nothing for show.</p>
+            <p>I reside in the charming Sonargaon Thana, nestled within the vibrant district of Narayanganj, part of the bustling Dhaka division. My home is in the heart of Bangladesh, a jewel on our blue planet Earth, located in the Milky Way galaxy, orbiting close to the life-giving sun.</p>
         </div>
     </div>
+    <footer>© 2024 Shahariar Mahfuz. All rights reserved</footer>
 </body>
 </html>
